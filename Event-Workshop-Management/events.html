@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events - EventHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">EventHub</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Events Section -->
+    <section class="featured">
+
+        <h2>Explore Events & Workshops</h2>
+
+
+        <!-- Event Counters -->
+
+        <div class="event-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">📅</div>
+
+                <h3 id="totalEvents">4</h3>
+
+                <p>Upcoming Events</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🛠️</div>
+
+                <h3 id="workshopCount">2</h3>
+
+                <p>Workshops</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🎤</div>
+
+                <h3 id="seminarCount">1</h3>
+
+                <p>Seminars</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">💼</div>
+
+                <h3 id="careerCount">1</h3>
+
+                <p>Career Events</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Countdown Timer -->
+
+        <div class="countdown-card">
+
+            <div class="countdown-icon">
+                ⏳
+            </div>
+
+            <h3>Next Event Starts In</h3>
+
+            <p class="countdown-event">
+                Web Development Workshop
+            </p>
+
+            <div class="countdown-timer">
+
+                <div class="time-box">
+                    <span id="countdownDays">00</span>
+                    <small>Days</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="countdownHours">00</span>
+                    <small>Hours</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="countdownMinutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div class="time-box">
+                    <span id="countdownSeconds">00</span>
+                    <small>Seconds</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Category Buttons -->
+
+        <div class="category-buttons">
+
+            <button
+                class="category-btn active"
+                onclick="filterEvents('all', this)">
+                All
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterEvents('Workshop', this)">
+                Workshops
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterEvents('Seminar', this)">
+                Seminars
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterEvents('Career', this)">
+                Career
+            </button>
+
+        </div>
+
+
+        <!-- Event Cards -->
+
+        <div class="event-container">
+
+
+            <!-- Web Development Workshop -->
+
+            <div
+                class="event-card"
+                data-category="Workshop"
+                data-event-id="web-development">
+
+                <h3>
+                    Web Development Workshop
+                </h3>
+
+                <p>
+                    Learn HTML, CSS and JavaScript through
+                    practical activities.
+                </p>
+
+                <span>
+                    📅 October 15, 2026
+                </span>
+
+                <br><br>
+
+                <a
+                    href="event-details.html?id=web-development"
+                    class="hero-btn">
+                    View Details
+                </a>
+
+            </div>
+
+
+            <!-- AI & Technology Seminar -->
+
+            <div
+                class="event-card"
+                data-category="Seminar"
+                data-event-id="ai-technology">
+
+                <h3>
+                    AI & Technology Seminar
+                </h3>
+
+                <p>
+                    Discover emerging technologies and
+                    the future of Artificial Intelligence.
+                </p>
+
+                <span>
+                    📅 October 20, 2026
+                </span>
+
+                <br><br>
+
+                <a
+                    href="event-details.html?id=ai-technology"
+                    class="hero-btn">
+                    View Details
+                </a>
+
+            </div>
+
+
+            <!-- Career Development Workshop -->
+
+            <div
+                class="event-card"
+                data-category="Career"
+                data-event-id="career-development">
+
+                <h3>
+                    Career Development Workshop
+                </h3>
+
+                <p>
+                    Build your communication skills,
+                    resume and interview confidence.
+                </p>
+
+                <span>
+                    📅 October 25, 2026
+                </span>
+
+                <br><br>
+
+                <a
+                    href="event-details.html?id=career-development"
+                    class="hero-btn">
+                    View Details
+                </a>
+
+            </div>
+
+
+            <!-- Data Analytics Workshop -->
+
+            <div
+                class="event-card"
+                data-category="Workshop"
+                data-event-id="data-analytics">
+
+                <h3>
+                    Data Analytics Workshop
+                </h3>
+
+                <p>
+                    Understand data analysis concepts
+                    and real-world applications.
+                </p>
+
+                <span>
+                    📅 November 2, 2026
+                </span>
+
+                <br><br>
+
+                <a
+                    href="event-details.html?id=data-analytics"
+                    class="hero-btn">
+                    View Details
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 EventHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

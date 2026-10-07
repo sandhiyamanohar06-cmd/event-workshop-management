@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details - EventHub</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            EventHub
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="events.html">
+                    Events
+                </a>
+            </li>
+
+            <li>
+                <a href="admin.html">
+                    Admin
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- Event Details -->
+
+    <section class="featured">
+
+        <h2 id="eventTitle">
+            Event Details
+        </h2>
+
+
+        <div class="event-card">
+
+
+            <h3>
+                About the Event
+            </h3>
+
+
+            <p id="eventDescription">
+                Loading event details...
+            </p>
+
+
+            <br>
+
+
+            <p>
+                <strong>📅 Date:</strong>
+
+                <span id="eventDate">
+                    -
+                </span>
+            </p>
+
+
+            <p>
+                <strong>⏰ Time:</strong>
+
+                <span id="eventTime">
+                    -
+                </span>
+            </p>
+
+
+            <p>
+                <strong>📍 Venue:</strong>
+
+                <span id="eventVenue">
+                    -
+                </span>
+            </p>
+
+
+            <p>
+                <strong>🏷️ Category:</strong>
+
+                <span id="eventCategory">
+                    -
+                </span>
+            </p>
+
+
+            <br>
+
+
+            <h3>
+                Register for this Event
+            </h3>
+
+
+            <form id="registrationForm">
+
+
+                <label for="name">
+                    Full Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name">
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email">
+
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number">
+
+
+                <button
+                    type="submit"
+                    class="hero-btn">
+
+                    Register Now
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- Confirmation -->
+
+            <div
+                id="confirmationCard"
+                class="confirmation-card">
+
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <h3>
+                    Registration Successful!
+                </h3>
+
+
+                <p>
+                    Your registration has been confirmed.
+                </p>
+
+
+                <div class="confirmation-details">
+
+
+                    <p>
+
+                        <strong>
+                            Event:
+                        </strong>
+
+                        <span id="confirmEvent">
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Name:
+                        </strong>
+
+                        <span id="confirmName">
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Email:
+                        </strong>
+
+                        <span id="confirmEmail">
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Phone:
+                        </strong>
+
+                        <span id="confirmPhone">
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Registered On:
+                        </strong>
+
+                        <span id="confirmDate">
+                        </span>
+
+                    </p>
+
+
+                </div>
+
+
+                <p class="confirmation-thank">
+
+                    🎉 We look forward to seeing you!
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 EventHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        // ===============================
+        // DEFAULT EVENT DATA
+        // ===============================
+
+        const defaultEvents = {
+
+            "web-development": {
+
+                name:
+                    "Web Development Workshop",
+
+                category:
+                    "Workshop",
+
+                date:
+                    "October 15, 2026",
+
+                description:
+                    "Learn HTML, CSS and JavaScript through practical activities.",
+
+                time:
+                    "10:00 AM - 1:00 PM",
+
+                venue:
+                    "Seminar Hall"
+
+            },
+
+
+            "ai-technology": {
+
+                name:
+                    "AI & Technology Seminar",
+
+                category:
+                    "Seminar",
+
+                date:
+                    "October 20, 2026",
+
+                description:
+                    "Discover emerging technologies and the future of Artificial Intelligence.",
+
+                time:
+                    "10:00 AM - 1:00 PM",
+
+                venue:
+                    "Auditorium"
+
+            },
+
+
+            "career-development": {
+
+                name:
+                    "Career Development Workshop",
+
+                category:
+                    "Career",
+
+                date:
+                    "October 25, 2026",
+
+                description:
+                    "Build your communication skills, resume and interview confidence.",
+
+                time:
+                    "10:00 AM - 1:00 PM",
+
+                venue:
+                    "Seminar Hall"
+
+            },
+
+
+            "data-analytics": {
+
+                name:
+                    "Data Analytics Workshop",
+
+                category:
+                    "Workshop",
+
+                date:
+                    "November 2, 2026",
+
+                description:
+                    "Understand data analysis concepts and real-world applications.",
+
+                time:
+                    "10:00 AM - 1:00 PM",
+
+                venue:
+                    "Computer Lab"
+
+            }
+
+        };
+
+
+
+        // ===============================
+        // GET EVENT ID
+        // ===============================
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const eventId =
+            params.get("id");
+
+
+        let eventData =
+            defaultEvents[eventId];
+
+
+
+        // ===============================
+        // CHECK CUSTOM EVENTS
+        // ===============================
+
+        if (!eventData) {
+
+            const customEvents =
+                JSON.parse(
+                    localStorage.getItem(
+                        "customEvents"
+                    )
+                ) || [];
+
+
+            eventData =
+                customEvents.find(
+                    function(event) {
+
+                        return event.id === eventId;
+
+                    }
+                );
+
+
+            if (eventData) {
+
+                eventData.time =
+                    "Time will be announced";
+
+                eventData.venue =
+                    "Venue will be announced";
+
+            }
+
+        }
+
+
+
+        // ===============================
+        // DISPLAY EVENT
+        // ===============================
+
+        if (eventData) {
+
+            document.getElementById(
+                "eventTitle"
+            ).textContent =
+                eventData.name;
+
+
+            document.getElementById(
+                "eventDescription"
+            ).textContent =
+                eventData.description;
+
+
+            document.getElementById(
+                "eventDate"
+            ).textContent =
+                eventData.date;
+
+
+            document.getElementById(
+                "eventTime"
+            ).textContent =
+                eventData.time;
+
+
+            document.getElementById(
+                "eventVenue"
+            ).textContent =
+                eventData.venue;
+
+
+            document.getElementById(
+                "eventCategory"
+            ).textContent =
+                eventData.category;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
